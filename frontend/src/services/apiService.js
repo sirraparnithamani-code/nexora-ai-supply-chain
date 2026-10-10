@@ -4,8 +4,7 @@
  * Transparently indicates whether responses are live from backend or local synthetic models.
  */
 
-const API_BASE = '/api';
-
+const API_BASE = import.meta.env.VITE_API_URL || '/api';
 export async function checkBackendHealth() {
   try {
     const res = await fetch(`${API_BASE}/health`, {
